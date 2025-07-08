@@ -3,162 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Simple and efficient calculator built by Fazi for quick everyday math.">
+    <meta
+      name="description"
+      content="Simple and efficient calculator built by Fazi for quick everyday math."
+    />
     <title>Calculator</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kablammo|Sour Gummy|Atma">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Kablammo|Poppins|Atma"
+    />
     <style>
       body {
-        background-color: rgb(36, 36, 36);
+        background: #283048; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0;
+        height: 100vh;
       }
 
       button {
-        width: 75px;
-        height: 60px;
+        width: 70px;
+        height: 55px;
         border-radius: 15px;
-        background-color: rgb(224, 221, 221);
-        font-size: 32px;
+        background-color: rgb(255, 255, 255, 0.2);
+        font-size: 1.5rem;
         border: none;
         color: black;
-        transition: 0.2s ease-out;
-        font-family: Sour Gummy;
-      }
-
-      button:hover {
-        transform: scale(0.9);
+        font-family: Poppins;
+        font-weight: bolder;
       }
 
       .calculator-container {
-        background-color: rgb(211, 205, 205);
+        background-color: rgb(255, 255, 255, 0.1);
         width: 400px;
-        height: fit-content;
+        height: 90vh;
         border-radius: 20px;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
       }
 
-    
-
       .operator-button {
-        color: rgb(231, 150, 150);
+        color: #acc3c0;
+        background-color: #4b4f68;
       }
 
       #display {
-        width: 395px;
-        height: 80px;
-        font-size: 50px;
+        width: 90%;
+        height: 60px;
+        font-size: 2.5rem;
         border: none;
+        box-shadow: 0px 0px 200px rgb(88, 85, 85);
         color: black;
-        background-color: rgb(224, 221, 221);
+        background-color: rgb(224, 221, 221, 0.1);
         text-align: right;
         margin-top: 30px;
-        font-family: Atma;
+        font-family: poppins;
+        border-radius: 5px 5px 10px 10px;
       }
 
       #button-grid {
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);
-        margin-left: 10px;
-        margin-right: 10px;
       }
 
       #equals-button {
-        color: white;
-        background-color: rgb(231, 150, 150);
+        color: #1f1e1e;
+        background-color: #ffefef;
       }
 
-      #exponent-form {
-        display: none;
-        margin-top: 5px;
-        gap: 5px;
-      }
-
-      #exponent-input {
-        width: 250px;
-        border-radius: 10px;
-        border: none;
-        height: 40px;
-        margin-bottom: 10px;
-        margin-left: 15px;
-      }
-
-      #exponent-button {
-        width: 60px;
-        font-size: 10px;
-        height: 45px;
-        box-shadow: none;
-        border-radius: 10px;
-      }
-
-      img {
-        width: 40px;
-        height: 40px;
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-left: 5px;
-      }
-
-
-
-      @media (max-width:480px){
+      @media (max-width: 480px) {
         .calculator-container {
-        background-color: rgb(211, 205, 205);
-        width: 100%;
-        height: fit-content;
-        border-radius: 20px;
-        
-      }
-       #exponent-input {
-        width: 180px;
-      }
+          background-color: rgb(211, 205, 205);
+          width: 100%;
+          height: fit-content;
+          border-radius: 20px;
+        }
 
-     
-      button {
-        width:70px;
-        height: 70px;
-        border-radius: 10px;
-        
-        font-size: 1.9rem;
-       
-      }
-       #display {
-        width: 98.5%;
-        height: 80px;
-        font-size: 50px;
-        border: none;
-        color: black;
-       
-      }
-       img {
-        width: 30px;
-        height: 30px;
-        margin-top: 7px;
-        margin-right: 10px;
-        margin-left: 5px;
-      }
-      body{display: flex;
-      align-items:center ;
-    justify-content: center;}
+        button {
+          width: 70px;
+          height: 70px;
+          border-radius: 10px;
+
+          font-size: 1.9rem;
+        }
+        #display {
+          width: 98.5%;
+          height: 80px;
+          font-size: 50px;
+          border: none;
+          color: black;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          margin-top: 7px;
+          margin-right: 10px;
+          margin-left: 5px;
+        }
       }
     </style>
   </head>
 
   <body>
+    <br />
     <div class="calculator-container">
-      <br /><br />
-
-      <input type="text" readonly id="display" /> <br /><br /><br />
+      <input type="text" readonly id="display" />
 
       <div id="button-grid">
-        <button onclick="remove()" id="clear-button" class="operator-button">C</button>
-        <button onclick="del()" id="delete-button" class="operator-button">
-          <img src="delete (1).png" alt="Delete" />
+        <button onclick="remove()" id="clear-button" class="operator-button">
+          C
         </button>
-        <button onclick="pw()" class="operator-button">xⁿ</button>
+        <button onclick="del()" id="delete-button" class="operator-button">del</button>
+        <button onclick="add('*3.14')" class="operator-button">π</button>
         <button onclick="add('+')" class="operator-button">+</button>
-
         <button onclick="add('9')">9</button>
         <button onclick="add('8')">8</button>
         <button onclick="add('7')">7</button>
@@ -178,19 +149,7 @@
         <button onclick="add('00')">00</button>
         <button onclick="add('.')">.</button>
         <button onclick="calculate()" id="equals-button">=</button>
-        <br>
       </div>
-
-      <form id="exponent-form">
-        <input
-          type="number"
-          id="exponent-input"
-          placeholder="Enter the exponent"
-        />
-        <button type="button" id="exponent-button" onclick="me()">
-          Calculate
-        </button>
-      </form>
     </div>
 
     <script src="cal.js"></script>
