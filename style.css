@@ -1,0 +1,88 @@
+ body {
+        background: #283048; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+      }
+
+      button {
+        width: 70px;
+        height: 55px;
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255, 0.2);
+        font-size: 1.5rem;
+        border: none;
+        color: black;
+        font-family: Poppins;
+        font-weight: bolder;
+      }
+
+      .calculator-container {
+        background-color: rgb(255, 255, 255, 0.1);
+        width: 400px;
+        height: 500px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .operator-button {
+        color: #acc3c0;
+        background-color: #4b4f68;
+      }
+ #equals-button{
+    grid-row-start: span 2;
+    height: auto;
+ }
+      #display {
+        width: 90%;
+        height: 60px;
+        font-size: 2.5rem;
+        border: none;
+        box-shadow: 0px 0px 200px rgb(88, 85, 85);
+        color: black;
+        background-color: rgb(224, 221, 221, 0.1);
+        text-align: right;
+        margin-top: 30px;
+        font-family: poppins;
+        border-radius: 5px 5px 10px 10px;
+        outline: none;
+      }
+
+      #button-grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      #equals-button {
+        color: #1f1e1e;
+        background-color: #ffefef;
+      }
+
+      @media (max-width: 480px) {
+      .calculator-container{
+        width: 350px;
+      }
+      #button-grid {
+        grid-gap:15px;
+      }
+      body{
+        margin: 0;
+        overflow: hidden;
+      }
+      }
