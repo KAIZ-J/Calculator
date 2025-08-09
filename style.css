@@ -27,6 +27,7 @@
         color: black;
         font-family: Poppins;
         font-weight: bolder;
+        outline: none;
       }
 
       .calculator-container {
