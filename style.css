@@ -28,6 +28,8 @@
         font-family: Poppins;
         font-weight: bolder;
         outline: none;
+
+        cursor: pointer;
       }
 
       .calculator-container {
